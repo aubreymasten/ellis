@@ -55,6 +55,11 @@ body {
 #window {
   width: calc(100vw - 100px);
   margin-left: 100px;
+  form {
+    text-align: left;
+    margin: auto;
+    width: 354px;
+  }
 }
 
 .story-block {
@@ -76,12 +81,18 @@ body {
   display: inline-block;
   float: left;
   margin: 0px 5px 10px 5px;
+  position: relative;
   h3 {
     text-transform: uppercase;
     margin-bottom: 0;
   }
   p {
     margin-top: 5px;
+  }
+  .user-name {
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
   }
 }
 
