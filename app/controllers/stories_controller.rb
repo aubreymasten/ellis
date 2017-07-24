@@ -4,6 +4,11 @@ class StoriesController < ApplicationController
     @most_recent = Story.most_recent(3)
   end
 
+  def show
+    @story = Story.find(params[:id])
+    # @story.update_attribute :plays, @story.plays + 1
+  end
+
   def new
     @account = current_user.account
     @story = @account.stories.new
