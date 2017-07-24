@@ -7,6 +7,10 @@ class Story < ApplicationRecord
     order(created_at: :desc).limit(count)
   }
 
+  scope :all_public, -> {
+    where("public = true")
+  }
+
   def short_desc
     if self.description.length > 140
       self.description.slice(0,140).chomp(".").concat('...')
