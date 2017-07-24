@@ -3,4 +3,5 @@
 <p>
   <%= story.description%>
 </p>
-<%= link_to "start story" %>
+<span class="metrics">views <%= story.plays %></span>
+<%= link_to "start story", account_story_path(story.account, story) %>
