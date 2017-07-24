@@ -9,6 +9,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="sidebar">
+      <h1><%= link_to "ellis", stories_path %></h1>
+      <ul id="nav-links">
+        <% if current_user && current_user.admin %>
+          <li>admin</li>
+          <li><%= link_to "account", account_path(current_user.account)%></li>
+          <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+        <% elsif current_user %>
+          <li><%= link_to "account", account_path(current_user.account)%></li>
+          <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "sign in", new_user_session_path %></li>
+          <li><%= link_to "sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="window">
+      <%= yield %>
+    </div>
   </body>
 </html>
