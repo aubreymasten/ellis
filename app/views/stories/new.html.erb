@@ -1,8 +1,8 @@
 <h3>this is the page where you make a story</h3>
 <%= form_for [@user, @story] do |f| %>
   <%= f.label :title%>
-  <%= f.text_field :title %>
-  <%= f.label :description%>
-  <%= f.text_field :description %>
+  <%= f.text_field :title %><br>
+  <%= f.label :description%><br>
+  <%= f.text_area :description, maxlength: 140, size: "30x5" %><br>
   <%= f.submit "create"%>
 <% end %>
