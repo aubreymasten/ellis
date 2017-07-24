@@ -19,6 +19,16 @@ class StoriesController < ApplicationController
     end
   end
 
+  def show_details
+    @story = Story.find(params[:format])
+    render :show_details
+  end
+
+  def hide_details
+    respond_to :js
+    render :hide
+  end
+
   private
 
   def story_params

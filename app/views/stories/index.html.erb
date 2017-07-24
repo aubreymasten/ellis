@@ -1,9 +1,14 @@
 <h3>this is the homepage</h3>
+<div id="story-details">
+
+</div>
 <div id="most-recent">
   <div class="story-block">
     <h3>most recent</h3>
     <% @most_recent.each do |story| %>
-      <%= render partial: "stories/card", locals: { data: story }%>
+      <%= link_to show_details_path(story), remote: true do %>
+        <%= render partial: "stories/card", locals: { data: story }%>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -14,5 +19,4 @@
       <%= render partial: "stories/card", locals: { data: story }%>
     <% end %>
   </div>
-
 </div>

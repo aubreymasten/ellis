@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root to: "stories#index"
 
+  get "hide_details" => "stories#hide_details"
+  get "show_details" => "stories#show_details"
+
   resources :accounts do
     resources :stories
   end
