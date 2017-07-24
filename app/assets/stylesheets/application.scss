@@ -57,6 +57,27 @@ body {
   margin-left: 100px;
 }
 
+.story-block {
+  width: 885px;
+  margin-left: auto;
+  margin-right: auto;
+  > h3 {
+    text-align: left;
+  }
+}
+
+.card {
+  border-radius: 1px;
+  width: 275px;
+  height: 166px;
+  background-color: red;
+  color: white;
+  padding: 5px 5px;
+  display: inline-block;
+  float: left;
+  margin: 0px 5px 10px 5px;
+}
+
 .registration {
   box-shadow: 0px 2px 7px -1px white;
   width: 250px;
