@@ -1,6 +1,11 @@
 <h3>this is the homepage</h3>
 <div id="most-recent">
-  <h3>most recent</h3>
+  <div class="story-block">
+    <h3>most recent</h3>
+    <% @most_recent.each do |story| %>
+      <%= render partial: "stories/card", locals: { data: story }%>
+    <% end %>
+  </div>
 </div>
 <div id="all-stories">
   <div class="story-block">
