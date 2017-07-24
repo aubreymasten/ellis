@@ -1,4 +1,4 @@
 example_id                         | status | run_time        |
 ---------------------------------- | ------ | --------------- |
-./spec/models/account_spec.rb[1:1] | passed | 0.50136 seconds |
-./spec/models/account_spec.rb[1:2] | passed | 0.0161 seconds  |
+./spec/models/account_spec.rb[1:1] | passed | 0.00536 seconds |
+./spec/models/user_spec.rb[1:1]    | passed | 0.01637 seconds |
