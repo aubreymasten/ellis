@@ -1,7 +1,10 @@
 <%= link_to "x", hide_edit_path, id: 'close', remote: true%>
 <h3>you are editing '<%= story.title.downcase%>'</h3>
 <div id="errors"></div>
-<span class="metrics">views <%= story.plays %></span>
+<span class="metrics">
+  visibility <span id="publicity"><%= link_to story.publicity, toggle_publicity_path(story), remote: true %></span>
+  views <%= story.plays %>
+</span>
 
 <%= form_for [story.account, story], remote: true do |f| %>
   <%= f.label :title %><br>

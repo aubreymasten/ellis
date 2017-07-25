@@ -48,6 +48,12 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:format])
   end
 
+  def toggle_publicity
+    @story = Story.find(params[:format])
+    @story.toggle_publicity
+    # respond_to :js
+  end
+
   private
 
   def story_params

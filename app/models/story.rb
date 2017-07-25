@@ -18,4 +18,16 @@ class Story < ApplicationRecord
       self.description
     end
   end
+
+  def toggle_publicity
+    self.update_attribute :public, !self.public
+  end
+
+  def publicity
+    if self.public
+      "public"
+    else
+      "private"
+    end
+  end
 end

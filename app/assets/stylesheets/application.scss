@@ -93,7 +93,8 @@ body {
   display: none;
   /* margin: auto; */
   left: calc(25% + 45px);
-  width: 50%;
+  width: 500px;
+  /* min-width: 500px; */
   padding: 0px 0px 16px 0px;
   box-shadow: 0px 0px 680px -25px black;
   p {
