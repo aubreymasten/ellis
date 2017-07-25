@@ -1,0 +1,5 @@
+<% stories.each do |story| %>
+  <%= link_to show_edit_path(story), remote: true do %>
+    <%= render partial: "stories/card", locals: { data: story }%>
+  <% end %>
+<% end %>

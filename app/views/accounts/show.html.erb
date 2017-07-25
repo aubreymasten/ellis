@@ -2,18 +2,19 @@
 <div id="edit-panel"></div>
 <div class="story-block cfx">
   <h3>public stories</h3>
-  <% @public.each do |story| %>
-    <%= link_to show_edit_path(story), remote: true do %>
-      <%= render partial: "stories/card", locals: { data: story }%>
-    <% end %>
-  <% end %>
+  <div id="public">
+    <%= render partial: 'stories/edit_block', locals: { stories: @public } %>
+  </div>
 </div>
 
 <div class="story-block cfx">
   <h3>private stories</h3>
-  <% @private.each do |story| %>
+  <div id="private">
+    <%= render partial: 'stories/edit_block', locals: { stories: @private } %>
+  </div>
+  <!-- <% @private.each do |story| %>
     <%= link_to show_edit_path(story), remote: true do %>
       <%= render partial: "stories/card", locals: { data: story } %>
     <% end %>
-  <% end %>
+  <% end %> -->
 </div>
