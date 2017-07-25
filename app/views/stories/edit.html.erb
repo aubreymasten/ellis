@@ -1,10 +1,13 @@
 <h3>you are editing the scenes and choices in '<%= @story.title%>'</h3>
-<%#= link_to "add scene", show_add_scene_path, remote: true %>
-<select>
-  <option value="">add start scene</option>
-  add start scene
-</select>
-<button type="button">submit</button>
+<div id="controls">
+  <%= link_to "add scene", show_add_scene_path(@story), remote: true %>
+  <select>
+    <option value="">add start scene</option>
+    add start scene
+  </select>
+  <button type="button">submit</button>  
+</div>
+
 <div id="scene-panel"></div>
 <% @story.scenes.each do |scene| %>
   <%= render partial: "scenes/card", locals: { scene: scene }%>
