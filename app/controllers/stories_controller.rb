@@ -24,6 +24,13 @@ class StoriesController < ApplicationController
     end
   end
 
+  def destroy
+    story = Story.find(params[:id])
+    @id = story.id
+    story.destroy
+    respond_to :js
+  end
+
   def update
     respond_to :js
     @story = Story.find(params[:id])

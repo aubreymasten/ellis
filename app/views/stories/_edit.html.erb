@@ -5,6 +5,7 @@
   visibility <span id="publicity"><%= link_to story.publicity, toggle_publicity_path(story), remote: true %></span>
   views <%= story.plays %>
 </span>
+<span id="delete"><%= link_to "delete", account_story_path(story.account, story), method: :delete, remote: true %></span>
 
 <%= form_for [story.account, story], remote: true do |f| %>
   <%= f.label :title %><br>
