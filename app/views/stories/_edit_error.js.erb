@@ -1,0 +1,4 @@
+$("#errors")
+.empty()
+.append("<%= j render partial: 'stories/edit_error.html', locals: {story: story}%>")
+.show();

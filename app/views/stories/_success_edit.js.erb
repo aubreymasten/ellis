@@ -1,0 +1,4 @@
+$("#errors").empty();
+$("#card-<%= story.id%>")
+.after("<%= j render partial: 'stories/card', locals: { data: story }%>")
+.remove();
