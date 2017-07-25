@@ -24,6 +24,16 @@ class StoriesController < ApplicationController
     end
   end
 
+  def update
+    respond_to :js
+    @story = Story.find(params[:id])
+    if @story.update(story_params)
+      render partial: 'stories/success_edit', locals: { story: @story }
+    else
+      render partial: 'stories/edit_error', locals: { story: @story }
+    end
+  end
+
   def show_details
     @story = Story.find(params[:format])
     render :show_details

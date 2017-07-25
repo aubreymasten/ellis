@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "hide_details" => "stories#hide_details"
   get "show_details" => "stories#show_details"
   get "show_edit" => "stories#show_edit"
+  get "hide_edit" => "stories#hide_edit"
 
   resources :accounts do
     resources :stories
