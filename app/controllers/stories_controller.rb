@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   def index
     @stories = Story.all_public
-    @most_recent = Story.most_recent(3)
+    @most_recent = Story.most_recent_public(3)
   end
 
   def show

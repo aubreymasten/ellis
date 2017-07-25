@@ -3,8 +3,8 @@ class Story < ApplicationRecord
   has_many :scenes, dependent: :destroy
   validates :title, :description, presence: true
 
-  scope :most_recent, -> count {
-    order(created_at: :desc).limit(count)
+  scope :most_recent_public, -> count {
+    where("public = true").order(created_at: :desc).limit(count)
   }
 
   scope :all_public, -> {
