@@ -2,7 +2,7 @@
 <h3>you are editing '<%= story.title.downcase%>'</h3>
 <div id="errors"></div>
 <span class="metrics">
-  visibility <span id="publicity"><%= link_to story.publicity, toggle_publicity_path(story), remote: true %></span>
+  toggle visibility <span id="publicity"><%= link_to story.publicity, toggle_publicity_path(story), remote: true %></span>
   views <%= story.plays %>
 </span>
 <span id="delete"><%= link_to "delete", account_story_path(story.account, story), method: :delete, remote: true %></span>
@@ -14,4 +14,5 @@
   <%= f.text_area :description, size: "60x10" %><br>
   <%= f.submit "save"%>
 <% end %>
+<%= link_to "edit story", edit_account_story_path(story.account, story) %>
 <%= link_to "start story", account_story_path(story.account, story) %>

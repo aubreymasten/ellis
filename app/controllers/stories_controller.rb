@@ -31,6 +31,10 @@ class StoriesController < ApplicationController
     respond_to :js
   end
 
+  def edit
+    @story = Story.find(params[:id])
+  end
+
   def update
     respond_to :js
     @story = Story.find(params[:id])
