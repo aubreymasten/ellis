@@ -51,6 +51,8 @@ class StoriesController < ApplicationController
   def toggle_publicity
     @story = Story.find(params[:format])
     @story.toggle_publicity
+    @public = current_user.account.public_stories
+    @private = current_user.account.private_stories
     # respond_to :js
   end
 

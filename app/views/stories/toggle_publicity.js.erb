@@ -1,1 +1,3 @@
 $("#publicity").empty().append("<%= j link_to @story.publicity, toggle_publicity_path(@story), remote: true %>")
+$("#public").empty().append("<%= j render partial: 'stories/edit_block', locals: { stories: @public } %>")
+$("#private").empty().append("<%= j render partial: 'stories/edit_block', locals: { stories: @private } %>")
