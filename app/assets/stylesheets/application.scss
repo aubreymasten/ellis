@@ -170,6 +170,39 @@ body {
   cursor: pointer;
 }
 
+.scene {
+  border-radius: 1px;
+  width: 275px;
+  // height: 166px;
+  background-color: #333;
+  color: white;
+  padding: 5px 5px;
+  display: inline-block;
+  float: left;
+  margin: 0px 5px 10px 5px;
+  position: relative;
+
+  box-shadow: 0px 5px 20px -9px black;
+  transition: box-shadow .3s ease-in;
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+  p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  ul {
+    margin-top: 0px;
+  }
+}
+
+.scene:hover {
+  box-shadow: 0px 5px 44px -9px black;
+  cursor: pointer;
+}
+
 .registration {
   box-shadow: 0px 2px 7px -1px white;
   width: 250px;

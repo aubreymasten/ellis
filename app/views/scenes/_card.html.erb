@@ -1,0 +1,13 @@
+<div class="scene">
+  <h3><%= scene.title %></h3>
+  <p><%#= scene.get_desc(140) %></p>
+  <p><%= scene.text %></p>
+  <p><strong>choices:</strong></p>
+  <ul>
+    <%# scene.get_choices(3).each do |choice| %>
+    <% scene.choices.each do |choice| %>
+      <li><%= choice.text %></li>
+    <% end %>
+    <%#= link_to "more choices", show_scene_details_path(scene), remote: true if scene.choices.length > 3 %>
+  </ul>
+</div>
