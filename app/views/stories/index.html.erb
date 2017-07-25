@@ -2,8 +2,7 @@
 <div id="story-details">
 
 </div>
-<div id="most-recent">
-  <div class="story-block">
+  <div class="story-block cfx">
     <h3>most recent</h3>
     <% @most_recent.each do |story| %>
       <%= link_to show_details_path(story), remote: true do %>
@@ -11,9 +10,7 @@
       <% end %>
     <% end %>
   </div>
-</div>
-<div id="all-stories">
-  <div class="story-block">
+  <div class="story-block cfx">
     <h3>all stories</h3>
     <% @stories.each do |story| %>
       <%= link_to show_details_path(story), remote: true do %>
@@ -21,4 +18,3 @@
       <% end %>
     <% end %>
   </div>
-</div>
