@@ -1,0 +1,6 @@
+$('#edit-panel')
+  .empty()
+  .css('background-color', $("#card-<%= @story.id %>").css('background-color'))
+  .css('color', 'white')
+  .append("<%= j render partial: 'stories/edit', locals: { story: @story }%>")
+  .show()

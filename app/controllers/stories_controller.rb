@@ -34,6 +34,10 @@ class StoriesController < ApplicationController
     render :hide
   end
 
+  def show_edit
+    @story = Story.find(params[:format])
+  end
+
   private
 
   def story_params

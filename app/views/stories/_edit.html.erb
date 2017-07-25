@@ -1,0 +1,13 @@
+<%= link_to "x", hide_edit_path, id: 'close', remote: true%>
+<h3>you are editing '<%= story.title.downcase%>'</h3>
+<div id="errors"></div>
+<span class="metrics">views <%= story.plays %></span>
+
+<%= form_for [story.account, story], remote: true do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description, size: "60x10" %><br>
+  <%= f.submit "save"%>
+<% end %>
+<%= link_to "start story", account_story_path(story.account, story) %>
