@@ -1,0 +1,7 @@
+$("#scene-<%= @previous.id%>")
+.after("<%= j render partial: 'scenes/card', locals: { scene: @previous, story: @scene.story }%>")
+.remove();
+
+$("#scene-<%= @story.start_scene_id%>")
+.after("<%= j render partial: 'scenes/card', locals: { scene: @scene, story: @scene.story }%>")
+.remove();

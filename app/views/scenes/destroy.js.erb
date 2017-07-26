@@ -1,2 +1,5 @@
 $("#scene-<%=@id%>").remove();
 $("#edit-panel").empty().hide();
+$("#start-select")
+.empty()
+.append("<%= j render partial: 'stories/start_scene_form', locals: { story: @story }%>");

@@ -5,6 +5,8 @@
 
     <% if scene.endgame%>
       <p class="no-choices"><strong>ENDGAME</strong></p>
+    <% elsif scene.story.start_scene_id == scene.id %>
+      <p id="start-game"><strong>START</strong></p>
     <% end %>
     <% if scene.choices.any? %>
       <p><strong>choices:</strong></p>

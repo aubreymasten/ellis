@@ -36,4 +36,10 @@ class Story < ApplicationRecord
       "private"
     end
   end
+
+  def start_scenes
+    self.scenes.where('endgame = false').map do |scene|
+      [scene.title, scene.id]
+    end
+  end
 end

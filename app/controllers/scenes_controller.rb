@@ -30,6 +30,7 @@ class ScenesController < ApplicationController
 
   def destroy
     scene = Scene.find(params[:id])
+    @story = scene.story
     @id = scene.id
     scene.destroy
   end

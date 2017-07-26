@@ -1,0 +1,13 @@
+<%#= form_tag(controller: 'scenes', action: 'set_start_scene'), remote: true do |f| %>
+  <%#= f.label 'start scene' %>
+  <%#= f.select(:start_scene_id, options_for_select(story.start_scenes))%>
+  <%#= f.submit "set start"%>
+<%# end %>
+
+
+
+<%= form_tag(set_start_scene_path(story), method: "get", remote: true) do %>
+  <%= label_tag(:start_scene_id, "start scene") %>
+  <%= select_tag(:start_scene_id, options_for_select(story.start_scenes)) %>
+  <%= submit_tag("set start") %>
+<% end %>

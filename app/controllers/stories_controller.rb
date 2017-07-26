@@ -67,6 +67,14 @@ class StoriesController < ApplicationController
     # respond_to :js
   end
 
+  def set_start_scene
+    @story = Story.find(params[:format])
+    @previous = Scene.find(@story.start_scene_id)
+    @story.update_attribute :start_scene_id, params[:start_scene_id]
+    @scene = Scene.find(params[:start_scene_id])
+
+  end
+
   private
 
   def story_params

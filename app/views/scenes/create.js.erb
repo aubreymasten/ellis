@@ -1,3 +1,6 @@
 $("#scenes-block")
 .append("<%= j render partial: 'scenes/card', locals: { scene: @scene, story: @story }%>");
 $("#edit-panel").empty().hide();
+$("#start-select")
+.empty()
+.append("<%= j render partial: 'stories/start_scene_form', locals: { story: @story }%>");

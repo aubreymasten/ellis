@@ -1,11 +1,9 @@
 <h3>you are editing the scenes and choices in '<%= @story.title%>'</h3>
 <div id="controls">
   <%= link_to "add scene", new_story_scene_path(@story), remote: true %>
-  <select>
-    <option value="">add start scene</option>
-    add start scene
-  </select>
-  <button type="button">submit</button>
+  <div id="start-select">
+    <%= render partial: 'stories/start_scene_form', locals: { story: @story }%>
+  </div>
 </div>
 
 <div id="edit-panel"></div>
