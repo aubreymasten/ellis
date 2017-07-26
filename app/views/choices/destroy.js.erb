@@ -1,0 +1,6 @@
+$("#scene-choices")
+.empty()
+.append("<%= j render partial: 'scenes/choice_list', locals: { scene: @scene }%>");
+$("#scene-<%= @scene.id%>")
+.after("<%= j render partial: 'scenes/card', locals: { scene: @scene }%>")
+.remove();

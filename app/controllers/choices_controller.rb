@@ -12,6 +12,13 @@ class ChoicesController < ApplicationController
     end
   end
 
+  def destroy
+    respond_to :js
+    @scene = Scene.find(params[:scene_id])
+    choice = @scene.choices.find(params[:id])
+    choice.destroy
+  end
+
   private
 
   def choice_params

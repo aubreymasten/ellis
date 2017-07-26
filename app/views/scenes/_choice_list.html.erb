@@ -2,5 +2,6 @@
   <p>
     <strong><%= choice.text %></strong>
     scene: <%= Scene.title_by_id(choice.dest_scene_id) %>
+    <%= link_to "delete", scene_choice_path(scene, choice), remote: true, method: :delete %>
   </p>
 <% end %>
