@@ -34,6 +34,9 @@ class ScenesController < ApplicationController
     scene.destroy
   end
 
+  def hide_edit_scene
+  end
+
   private
   def scene_params
     params.require(:scene).permit(:title, :text)

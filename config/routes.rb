@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get "show_edit" => "stories#show_edit"
   get "hide_edit" => "stories#hide_edit"
   get "toggle_publicity" => "stories#toggle_publicity"
-  get "show_add_scene" => "scenes#show_add_scene"
+  # get "show_add_scene" => "scenes#show_add_scene"
+  get "hide_edit_scene" => "scenes#hide_edit_scene"
 
   resources :accounts do
     resources :stories
