@@ -12,4 +12,6 @@
 <% end %>
 <%= link_to "add choice", new_scene_choice_path(scene), remote: true %>
 <div id="choice-form"></div>
-<%= render partial: "scenes/choice_list", locals: { scene: scene } %>
+<div id="scene-choices">
+  <%= render partial: "scenes/choice_list", locals: { scene: scene } %>
+</div>

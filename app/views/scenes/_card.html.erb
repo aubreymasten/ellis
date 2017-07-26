@@ -2,7 +2,7 @@
   <h3><%= scene.title %></h3>
   <p><%= scene.get_desc(140) %></p>
   <p><strong>choices:</strong></p>
-  <ul>
+  <ul class="choices">
     <% scene.get_choices(3).each do |choice| %>
       <li><%= choice.text %></li>
     <% end %>
