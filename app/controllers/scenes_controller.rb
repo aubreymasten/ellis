@@ -4,12 +4,23 @@ class ScenesController < ApplicationController
     @scene = @story.scenes.new
   end
 
+  def edit
+    @story = Story.find(params[:story_id])
+    @scene = @story.scenes.find(params[:id])
+  end
+
   def create
     @story = Story.find(params[:story_id])
     @scene =  @story.scenes.new(scene_params)
     unless @scene.save
       render partial: 'scenes/edit_error', locals: { scene: @scene }
     end
+  end
+
+  def destroy
+    scene = Scene.find(params[:id])
+    @id = scene.id
+    scene.destroy
   end
 
   private

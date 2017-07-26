@@ -1,0 +1,13 @@
+<%#= link_to "x", hide_edit_scene_path, id: 'close', remote: true%>
+<h3>you are editing '<%= scene.title.downcase%>'</h3>
+<div id="errors"></div>
+<span id="delete"><%= link_to "delete", story_scene_path(scene.story, scene), method: :delete, remote: true %></span>
+
+<%= form_for [scene.story, scene], remote: true do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :text %><br>
+  <%= f.text_area :text, size: "60x10" %><br>
+  <%= f.submit "save"%>
+<% end %>
+<p>add choices</p>

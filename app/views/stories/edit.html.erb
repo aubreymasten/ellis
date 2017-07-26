@@ -8,9 +8,12 @@
   <button type="button">submit</button>
 </div>
 
-<div id="scene-panel"></div>
+<div id="new-scene-panel"></div>
+<div id="edit-panel"></div>
 <div id="scenes-block">
   <% @story.scenes.each do |scene| %>
-    <%= render partial: "scenes/card", locals: { scene: scene }%>
+    <%= link_to edit_story_scene_path(@story, scene), remote: true do %>
+      <%= render partial: "scenes/card", locals: { scene: scene }%>
+    <% end %>
   <% end %>
 </div>
