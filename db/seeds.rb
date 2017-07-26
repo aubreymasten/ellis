@@ -16,7 +16,12 @@ class Seed
   def generate_stories
     user = User.first
     20.times do |index|
-      Story.create(title: Faker::Book.title, description: Faker::Lovecraft.paragraph(4, 6), account_id: user.account.id)
+      Story.create(
+        title: Faker::Book.title,
+        description: Faker::Lovecraft.paragraph(4, 6),
+        account_id: user.account.id,
+        public: index % 3 === 0
+      )
     end
   end
 
