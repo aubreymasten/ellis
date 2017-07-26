@@ -8,8 +8,8 @@
   <button type="button">submit</button>
 </div>
 
-<div id="new-scene-panel"></div>
 <div id="edit-panel"></div>
+
 <div id="scenes-block">
   <% @story.scenes.each do |scene| %>
     <%= link_to edit_story_scene_path(@story, scene), remote: true do %>
