@@ -1,0 +1,5 @@
+$("#scene-panel")
+.empty()
+.show()
+.css('background-color', 'red')
+.append("<%= j render partial: 'add_scene', locals: {story: @story, scene: @scene }%>");
