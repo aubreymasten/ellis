@@ -10,4 +10,12 @@ class Scene < ApplicationRecord
       self.text.slice(0,length-1).chomp(".").concat('...')
     end
   end
+
+  def get_choices (count)
+    if self.choices.count <= count
+      self.choices
+    else
+      self.choices.limit(count)
+    end
+  end
 end
