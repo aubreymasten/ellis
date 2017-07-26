@@ -37,6 +37,11 @@ class ScenesController < ApplicationController
   def hide_edit_scene
   end
 
+  def toggle_endgame
+    @scene = Scene.find(params[:format])
+    @scene.toggle_endgame
+  end
+
   private
   def scene_params
     params.require(:scene).permit(:title, :text)

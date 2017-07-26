@@ -19,6 +19,10 @@ class Scene < ApplicationRecord
     end
   end
 
+  def toggle_endgame
+    self.update_attribute :endgame, !self.endgame
+  end
+
   def self.title_by_id(id)
     self.find(id).title
   end

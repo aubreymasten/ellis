@@ -2,10 +2,14 @@
   <div class="scene" id="scene-<%=scene.id%>">
     <h3><%= scene.title %></h3>
     <p><%= scene.get_desc(140) %></p>
+
+    <% if scene.endgame%>
+      <p class="no-choices"><strong>ENDGAME</strong></p>
+    <% end %>
     <% if scene.choices.any? %>
       <p><strong>choices:</strong></p>
     <% else %>
-      <p id="no-choices"><strong>no choices</strong></p>
+      <p><strong>no choices</strong></p>
     <% end %>
 
     <ul class="choices">

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "toggle_publicity" => "stories#toggle_publicity"
   # get "show_add_scene" => "scenes#show_add_scene"
   get "hide_edit_scene" => "scenes#hide_edit_scene"
+  get "toggle_endgame" => "scenes#toggle_endgame"
 
   resources :accounts do
     resources :stories

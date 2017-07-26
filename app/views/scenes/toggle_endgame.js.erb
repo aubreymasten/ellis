@@ -1,0 +1,6 @@
+$("#endgame")
+.empty()
+.append("<%= j render partial: 'scenes/status', locals: {scene: @scene} %>");
+$("#scene-<%= @scene.id%>")
+.after("<%= j render partial: 'scenes/card', locals: { scene: @scene }%>")
+.remove();
