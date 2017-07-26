@@ -1,0 +1,7 @@
+<%= form_for [scene, choice], remote: true do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text %><br>
+  <%= f.label "desination scene" %>
+  <%= f.select(:dest_scene_id, options_for_select(scene.story.select_options))%>
+  <%= f.submit "add choice" %>
+<% end %>

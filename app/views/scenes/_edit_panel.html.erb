@@ -1,5 +1,5 @@
 <%= link_to "x", hide_edit_scene_path, id: 'close', remote: true%>
-<h3>you are editing '<%= scene.title.downcase%>'</h3>
+<h3 id="title">you are editing '<%= scene.title.downcase%>'</h3>
 <div id="errors"></div>
 <span id="delete"><%= link_to "delete", story_scene_path(scene.story, scene), method: :delete, remote: true %></span>
 
@@ -10,4 +10,6 @@
   <%= f.text_area :text, size: "60x10" %><br>
   <%= f.submit "save"%>
 <% end %>
-<p>add choices</p>
+<%= link_to "add choice", new_scene_choice_path(scene), remote: true %>
+<div id="choice-form"></div>
+<%= render partial: "scenes/choice_list", locals: { scene: scene } %>

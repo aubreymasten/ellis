@@ -18,4 +18,8 @@ class Scene < ApplicationRecord
       self.choices.limit(count)
     end
   end
+
+  def self.title_by_id(id)
+    self.find(id).title
+  end
 end

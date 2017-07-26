@@ -1,0 +1,6 @@
+<% scene.choices.each do |choice| %>
+  <p>
+    <strong><%= choice.text %></strong>
+    scene: <%= Scene.title_by_id(choice.dest_scene_id) %>
+  </p>
+<% end %>

@@ -19,6 +19,12 @@ class Story < ApplicationRecord
     end
   end
 
+  def select_options
+    self.scenes.map do |scene|
+      [scene.title, scene.id]
+    end
+  end
+
   def toggle_publicity
     self.update_attribute :public, !self.public
   end
