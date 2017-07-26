@@ -12,8 +12,6 @@
 
 <div id="scenes-block">
   <% @story.scenes.each do |scene| %>
-    <%= link_to edit_story_scene_path(@story, scene), remote: true do %>
-      <%= render partial: "scenes/card", locals: { scene: scene }%>
-    <% end %>
+    <%= render partial: "scenes/card", locals: { scene: scene, story: @story }%>
   <% end %>
 </div>
