@@ -7,6 +7,12 @@ class Story < ApplicationRecord
     where("public = true").order(created_at: :desc).limit(count).find_all {|s| s.is_valid?}
   }
 
+  after_create :add_color
+
+  def add_color
+    self.update_attribute :color, "rgb(#{rand(255)}, #{rand(255)}, #{rand(255)})"
+  end
+
   def self.all_public
     self.where("public = true").find_all {|s| s.is_valid?}
   end

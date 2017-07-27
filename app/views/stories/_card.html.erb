@@ -1,4 +1,4 @@
-<div class="card" id="card-<%=data.id%>" style="background-color: rgb(<%= rand(200) %>,<%= rand(205) %>,<%= rand(205) %>)">
+<div class="card" id="card-<%=data.id%>" style="background-color: <%= data.color%>">
   <h3><%= data.title %></h3>
   <p><%= data.short_desc %></p>
   <span class="user-name">by <%= data.account.name %></span>

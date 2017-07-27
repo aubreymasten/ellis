@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726225158) do
+ActiveRecord::Schema.define(version: 20170727151837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170726225158) do
     t.integer "plays", default: 0
     t.boolean "public", default: false
     t.integer "start_scene_id"
+    t.string "color", default: "rgb(33,33,33)"
   end
 
   create_table "users", force: :cascade do |t|
