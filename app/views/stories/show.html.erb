@@ -1,2 +1,5 @@
 <h3>this is the story screen</h3>
 <h3>you are playing <%= @story.title%></h3>
+<div id="story">
+  <%= render partial: "stories/game", locals: { scene: @scene }%>
+</div>

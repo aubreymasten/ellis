@@ -1,0 +1,3 @@
+$("#story")
+.empty()
+.append("<%= j render partial: 'stories/game', locals: { scene: @next_scene }%>");

@@ -5,8 +5,16 @@ class StoriesController < ApplicationController
   end
 
   def show
+    byebug
     @story = Story.find(params[:id])
+    @scene = @story.scenes.find(@story.start_scene_id) if @story.start_scene_id
     # @story.update_attribute :plays, @story.plays + 1
+  end
+
+  def make_choice
+    @choice = Choice.find(params[:format])
+    # @story = choice.scene.story
+    @next_scene = Scene.find(@choice.dest_scene_id)
   end
 
   def new
@@ -68,11 +76,10 @@ class StoriesController < ApplicationController
   end
 
   def set_start_scene
-    @story = Story.find(params[:format])
+    @scene = Scene.find(params[:start_scene_id])
+    @story = @scene.story
     @previous = Scene.find(@story.start_scene_id)
     @story.update_attribute :start_scene_id, params[:start_scene_id]
-    @scene = Scene.find(params[:start_scene_id])
-
   end
 
   private

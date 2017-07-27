@@ -1,0 +1,8 @@
+<div id="text">
+  <%= scene.text%>
+</div>
+<div id="choices">
+  <% scene.choices.each do |choice| %>
+    <%= link_to choice.text, make_choice_path(choice), remote: true %>
+  <% end %>
+</div>

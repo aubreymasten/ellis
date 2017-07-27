@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "hide_edit_scene" => "scenes#hide_edit_scene"
   get "toggle_endgame" => "scenes#toggle_endgame"
   get "set_start_scene" => "stories#set_start_scene"
+  get "make_choice" => "stories#make_choice"
 
   resources :accounts do
     resources :stories
