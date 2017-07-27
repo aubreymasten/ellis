@@ -77,7 +77,7 @@ class StoriesController < ApplicationController
   def set_start_scene
     @scene = Scene.find(params[:start_scene_id])
     @story = @scene.story
-    @previous = Scene.find(@story.start_scene_id)
+    @previous = Scene.find(@story.start_scene_id) if @story.start_scene_id
     @story.update_attribute :start_scene_id, params[:start_scene_id]
   end
 
