@@ -5,7 +5,6 @@ class StoriesController < ApplicationController
   end
 
   def show
-    byebug
     @story = Story.find(params[:id])
     @scene = @story.scenes.find(@story.start_scene_id) if @story.start_scene_id
     # @story.update_attribute :plays, @story.plays + 1
