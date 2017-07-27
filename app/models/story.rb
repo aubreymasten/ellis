@@ -4,11 +4,11 @@ class Story < ApplicationRecord
   validates :title, :description, presence: true
 
   scope :most_recent_public, -> count {
-    where("public = true").order(created_at: :desc).limit(count).find_all {|s| s.valid?}
+    where("public = true").order(created_at: :desc).limit(count).find_all {|s| s.is_valid?}
   }
 
   def self.all_public
-    self.where("public = true").find_all {|s| s.valid?}
+    self.where("public = true").find_all {|s| s.is_valid?}
   end
 
   def short_desc
@@ -43,7 +43,7 @@ class Story < ApplicationRecord
     end
   end
 
-  def valid?
+  def is_valid?
     self.start_scene_id &&
     self.scenes.any? &&
     self.scenes.any? { |s| s.endgame }
