@@ -1,8 +1,14 @@
 <div id="text">
   <%= scene.text%>
 </div>
-<div id="choices">
-  <% scene.choices.each do |choice| %>
-    <%= link_to choice.text, make_choice_path(choice), remote: true %>
+<% if !scene.endgame%>
+  <div id="choices">
+    <% scene.choices.each do |choice| %>
+      <%= link_to choice.text, make_choice_path(choice), remote: true %>
+    <% end %>
+  </div>
+<% else %>
+  <%= link_to account_story_path(scene.story.account, scene.story) do %>
+    <h3>Game Over</h3>
   <% end %>
-</div>
+<% end %>
