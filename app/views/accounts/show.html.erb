@@ -12,9 +12,11 @@
   <div id="private">
     <%= render partial: 'stories/edit_block', locals: { stories: @private } %>
   </div>
-  <!-- <% @private.each do |story| %>
-    <%= link_to show_edit_path(story), remote: true do %>
-      <%= render partial: "stories/card", locals: { data: story } %>
-    <% end %>
-  <% end %> -->
+</div>
+
+<div class="story-block cfx">
+  <h3>incomplete stories</h3>
+  <div id="invalid">
+    <%= render partial: 'stories/edit_block', locals: { stories: @invalid } %>
+  </div>
 </div>

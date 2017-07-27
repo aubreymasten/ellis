@@ -4,12 +4,12 @@ class Story < ApplicationRecord
   validates :title, :description, presence: true
 
   scope :most_recent_public, -> count {
-    where("public = true").order(created_at: :desc).limit(count)
+    where("public = true").order(created_at: :desc).limit(count).find_all {|s| s.valid?}
   }
 
-  scope :all_public, -> {
-    where("public = true")
-  }
+  def self.all_public
+    self.where("public = true").find_all {|s| s.valid?}
+  end
 
   def short_desc
     if self.description.length > 140
@@ -41,5 +41,11 @@ class Story < ApplicationRecord
     self.scenes.where('endgame = false').map do |scene|
       [scene.title, scene.id]
     end
+  end
+
+  def valid?
+    self.start_scene_id &&
+    self.scenes.any? &&
+    self.scenes.any? { |s| s.endgame }
   end
 end
