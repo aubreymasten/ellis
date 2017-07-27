@@ -1,4 +1,5 @@
 $("#errors").empty();
+$("#edit-panel h3").text("you are editing '<%= story.title.downcase %>'")
 $("#card-<%= story.id%>")
 .after("<%= j render partial: 'stories/card', locals: { data: story }%>")
 .remove();
