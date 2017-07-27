@@ -3,9 +3,11 @@
 </div>
 <% if !scene.endgame%>
   <div id="choices">
+    <ul>
     <% scene.choices.each do |choice| %>
-      <%= link_to choice.text, make_choice_path(choice), remote: true %>
+      <li><%= link_to choice.text, make_choice_path(choice), remote: true %></li>
     <% end %>
+  </ul>
   </div>
 <% else %>
   <%= link_to account_story_path(scene.story.account, scene.story) do %>

@@ -1,3 +1,6 @@
 $("#story")
 .empty()
 .append("<%= j render partial: 'stories/game', locals: { scene: @next_scene }%>");
+$('body').css('background-color', "#011").css('color', 'white');
+$('#text').css('font-weight', '600').css('font-size','20px');
+$('#header').hide();
